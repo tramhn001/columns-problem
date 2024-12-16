@@ -1,6 +1,17 @@
 def top_column(matrix):
   # Write your solution here! 
-  pass
+    best_sum = None
+    best_col = None
+
+    for col in range(len(matrix[0])):
+        sum_col = 0
+        for row in range(len(matrix)):
+            sum_col += matrix[row][col]
+        if best_sum is None or best_sum < sum_col:
+            best_sum = sum_col
+            best_col = col
+    return best_col
+
 
 
 # Test cases
